@@ -63,7 +63,7 @@ const MenuItem = styled.div`
 const Navbar = () => {
   return (
     <Container>
-      <Wrapper>
+      <Wrapper> 
           <Left>
             <Language>EN</Language>
             <SearchContainer>
