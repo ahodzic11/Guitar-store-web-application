@@ -25,18 +25,23 @@ export const sliderItems = [
 export const categories = [
     {
         id: 1,
-        img: "https://www.ultimate-guitar.com/static/article/draft/134837_kUqn4_yryXVEZDMG_61358.jpg",
-        title: "LES PAUL",
+        img: "https://images.unsplash.com/photo-1580745294190-1626b58bf7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWMlMjBndWl0YXJ8ZW58MHx8MHx8&w=1000&q=80",
+        title: "Electric",
+        cat:"Electric"
     },
     {
         id: 2,
-        img: "https://www.fmicassets.com/Damroot/FacebookJpg/10001/0144522500_gtr_frt_001_rr.jpg",
-        title: "STRATOCASTER",
+        img: "https://images.unsplash.com/photo-1580745089072-032cbde08507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWNvdXN0aWMlMjBndWl0YXJ8ZW58MHx8MHx8&w=1000&q=80",
+        title: "Acoustic",
+        cat:"Acoustic"
+
     },
     {
         id: 3,
-        img: "https://www.musicinstrumentnews.co.uk/wp-content/uploads/2022/02/Fender_GH_RWTele_Top.jpg",
-        title: "TELECASTER",
+        img: "https://images.unsplash.com/photo-1622483819773-911f8fcf15ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmFzcyUyMGd1aXRhcnxlbnwwfHwwfHw%3D&w=1000&q=80",
+        title: "Bass",
+        cat:"Bass"
+
     },
 ]
 

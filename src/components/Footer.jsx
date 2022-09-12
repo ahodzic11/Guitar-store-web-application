@@ -82,9 +82,9 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>GPICKUPS</Logo>
+        <Logo>Gibson</Logo>
         <Desc>
-            GPICKUPS IS A NEW COMPANY WHO ITD ITD ITD
+        Gibson Brands, Inc. (formerly Gibson Guitar Corporation) is an American manufacturer of guitars, other musical instruments, and professional audio equipment from Kalamazoo, Michigan, and now based in Nashville, Tennessee. The company was formerly known as Gibson Guitar Corporation and renamed Gibson Brands, Inc. on June 11, 2013
         </Desc>
         <SocialContainer>
             <SocialIcon color="3B5999">
@@ -108,9 +108,9 @@ const Footer = () => {
         <List>
             <ListItem>Home</ListItem>
             <ListItem>Cart</ListItem>
-            <ListItem>Man Fashion</ListItem>
-            <ListItem>Woman Fashion</ListItem>
-            <ListItem>Accessories</ListItem>
+            <ListItem>Electrical guitars</ListItem>
+            <ListItem>Acoustic guitars</ListItem>
+            <ListItem>Classical guitars</ListItem>
             <ListItem>My Account</ListItem>
             <ListItem>Order Tracking</ListItem>
             <ListItem>Wishlist</ListItem>
@@ -120,7 +120,7 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem><RoomIcon style={{marginRight:"10px"}}/>
-            622 Dixie Path, South Tobinchester 98336
+            Nashville, Tennessee, United States
         </ContactItem>
         <ContactItem> <LocalPhoneIcon style={{marginRight:"10px"}}/>
             +387 62 734 086

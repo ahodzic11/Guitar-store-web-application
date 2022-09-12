@@ -1,4 +1,5 @@
 import { Add, Remove } from "@material-ui/icons";
+import { useSelector } from "react-redux";
 import styled from "styled-components"
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -154,6 +155,8 @@ const Button  = styled.button`
 
 
 const Cart = () => {
+    const cart = useSelector(state => state.cart)
+
   return (
     <Container>
       <Navbar/>
@@ -171,51 +174,34 @@ const Cart = () => {
         <Bottom>
 
             <Info>
-                <Product>
+                {cart.products.map(product => (
+
+                    <Product>
                     <ProductDetail>
-                        <Image src="https://img10.jd.co.th/n0/jfs/t10/227/5238452115/94525/f5be29df/602e069dN991e9665.jpg!q70.jpg"/>
+                        <Image src={product.img}/>
                         <Details>
-                            <ProductName><b>Product:</b>JESSIE THUNDER SHOES</ProductName>
-                            <ProductId><b>ID:</b>512412</ProductId>
-                            <ProductColor color="black"/>
-                            <ProductSize><b>Size:</b>37.5</ProductSize>
+                            <ProductName><b>Product:</b>{product.title}</ProductName>
+                            <ProductId><b>ID:</b>{product.id}</ProductId>
+                            <ProductColor color={product.color}/>
+                            <ProductSize><b>Size:</b>{product.size}</ProductSize>
                         </Details>
                     </ProductDetail>
                     <PriceDetail>
                         <ProductAmountContainer>
                             <Add/>
-                            <ProductAmount>2</ProductAmount>
+                            <ProductAmount>{product.quantity}</ProductAmount>
                             <Remove/>
                         </ProductAmountContainer>
-                        <ProductPrice>$ 30</ProductPrice>
+                        <ProductPrice>${product.price*product.quantity}</ProductPrice>
                     </PriceDetail>
-                </Product>
-                <Hr/>
-                <Product>
-                    <ProductDetail>
-                        <Image src="https://img10.jd.co.th/n0/jfs/t10/227/5238452115/94525/f5be29df/602e069dN991e9665.jpg!q70.jpg"/>
-                        <Details>
-                            <ProductName><b>Product:</b>JESSIE THUNDER SHOES</ProductName>
-                            <ProductId><b>ID:</b>512412</ProductId>
-                            <ProductColor color="black"/>
-                            <ProductSize><b>Size:</b>37.5</ProductSize>
-                        </Details>
-                    </ProductDetail>
-                    <PriceDetail>
-                        <ProductAmountContainer>
-                            <Add/>
-                            <ProductAmount>2</ProductAmount>
-                            <Remove/>
-                        </ProductAmountContainer>
-                        <ProductPrice>$ 30</ProductPrice>
-                    </PriceDetail>
-                </Product>
+                    </Product>
+                    ))}
             </Info>
             <Summary>
                 <SummaryTitle>ORDER SUMMARY</SummaryTitle>
                 <SummaryItem>
                     <SummaryItemText>Subtotal</SummaryItemText>
-                    <SummaryItemPrice>$ 80</SummaryItemPrice>
+                    <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
                 </SummaryItem>
                 <SummaryItem>
                     <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -227,7 +213,7 @@ const Cart = () => {
                 </SummaryItem>
                 <SummaryItem type="total">
                     <SummaryItemText>Total</SummaryItemText>
-                    <SummaryItemPrice>$ 80</SummaryItemPrice>
+                    <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
                 </SummaryItem>
                 <Button>CHECKOUT NOW</Button>
             </Summary>
