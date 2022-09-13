@@ -1,10 +1,16 @@
-import { Add, Remove } from "@material-ui/icons";
+import { Add, Remove, StayPrimaryPortraitRounded } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components"
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import StripeCheckout from "react-stripe-checkout"
+import { useEffect, useState } from "react";
+import { userRequest } from "../requestMethods";
+import {useNavigate} from "react-router-dom"
+
+const KEY = "pk_test_51LhHmgLaIhpnTH0CZyMTZL5JpPqS4Vdo7wVbMxn5HmvmaDpEPfvx9ta4lBRpuaDXPj8J3gCYVaDF2LQ9IqX35B1w00VXtc7z2y";
 
 const Container = styled.div``;
 
@@ -156,7 +162,27 @@ const Button  = styled.button`
 
 const Cart = () => {
     const cart = useSelector(state => state.cart)
+    const [stripeToken, setStripeToken] = useState(null)
+    const navigate = useNavigate()
 
+    const onToken = (token) => {
+        setStripeToken(token)
+    }
+
+    useEffect(() => {
+        const makeRequest = async () => {
+          try {
+            const res = await userRequest.post("/checkout/payment", {
+              tokenId: stripeToken.id,
+              amount: 500,
+            });
+            navigate("/success", {state: {
+              stripeData: res.data,
+              products: cart, }});
+          } catch {}
+        };
+        stripeToken && makeRequest();
+      }, [stripeToken, cart.total, navigate]);
   return (
     <Container>
       <Navbar/>
@@ -174,16 +200,16 @@ const Cart = () => {
         <Bottom>
 
             <Info>
-                {cart.products.map(product => (
-
+                {cart.products.map((product) => (
+                    
                     <Product>
                     <ProductDetail>
                         <Image src={product.img}/>
                         <Details>
-                            <ProductName><b>Product:</b>{product.title}</ProductName>
-                            <ProductId><b>ID:</b>{product.id}</ProductId>
+                            <ProductName><b>Product: </b>{product.title}</ProductName>
+                            <ProductId><b>ID: </b>{product._id}</ProductId>
                             <ProductColor color={product.color}/>
-                            <ProductSize><b>Size:</b>{product.size}</ProductSize>
+                            <ProductSize><b>Size: </b>{product.size}</ProductSize>
                         </Details>
                     </ProductDetail>
                     <PriceDetail>
@@ -215,7 +241,18 @@ const Cart = () => {
                     <SummaryItemText>Total</SummaryItemText>
                     <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
                 </SummaryItem>
+                <StripeCheckout
+                name="Gibson US"
+                image="https://i.pinimg.com/originals/6c/e0/f3/6ce0f399b6c4f0d3949d13f6475c523b.jpg"
+                billingAddress
+                shippingAddress
+                description={`Your total is $${cart.total}`}
+                amount={cart.total*100}
+                token={onToken}
+                stripeKey={KEY}
+                >
                 <Button>CHECKOUT NOW</Button>
+                </StripeCheckout>
             </Summary>
         </Bottom>
       </Wrapper>
