@@ -37,15 +37,17 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-    font-weight: 200;
+    font-size: 38px;
+    font-weight: 600;
 `;
 
 const Desc = styled.p`
     margin: 20px 0px;
+    font-size: 15px;
 `;
 
 const Price = styled.span`
-    font-weight: 100;
+    font-weight: 700;
     font-size: 40px;
 `;
 
@@ -64,13 +66,14 @@ const Filter = styled.div`
 
 const FilterTitle = styled.span`
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 600;
 `;
 
 const FilterColor = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    font-weight: 600;
     background-color: ${props => props.color};
     margin: 0px 5px;
     cursor: pointer;
@@ -113,7 +116,7 @@ const Button = styled.button`
     border: 2px solid teal;
     background-color: white;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 900;
 
     &:hover{
         background-color: #f8f4f4

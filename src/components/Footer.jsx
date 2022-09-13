@@ -110,7 +110,7 @@ const Footer = () => {
             <ListItem>Cart</ListItem>
             <ListItem>Electrical guitars</ListItem>
             <ListItem>Acoustic guitars</ListItem>
-            <ListItem>Classical guitars</ListItem>
+            <ListItem>Bass guitars</ListItem>
             <ListItem>My Account</ListItem>
             <ListItem>Order Tracking</ListItem>
             <ListItem>Wishlist</ListItem>
@@ -123,7 +123,7 @@ const Footer = () => {
             Nashville, Tennessee, United States
         </ContactItem>
         <ContactItem> <LocalPhoneIcon style={{marginRight:"10px"}}/>
-            +387 62 734 086
+            (936) 687-3855
         </ContactItem>
         <ContactItem><MailOutlineIcon style={{marginRight:"10px"}}/>
             ahodzic11@etf.unsa.ba

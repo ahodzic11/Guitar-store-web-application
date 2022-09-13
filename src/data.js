@@ -1,23 +1,23 @@
 export const sliderItems = [
     {
         id: 1,
-        img: "https://www.ultimate-guitar.com/static/article/draft/134837_kUqn4_yryXVEZDMG_61358.jpg",
-        title: "SUMMER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        img: "https://images.ctfassets.net/m8onsx4mm13s/7ceh4kt0V4wun8KFT4JDEO/9ffcff07f47ada81eacfcaf9d60f2c87/Homepage_33Module_Maestro-Mesa.jpg",
+        title: "The Home of Tone",
+        desc: "MESA/Boogie has the tone tools you need. Legendary amps, cabinets, effects, and more await at The Home of Tone!",
         bg: "f5fafd",
     },
     {
         id: 2,
-        img: "https://cdn.mos.cms.futurecdn.net/nbyjQ5giJsM4G9Hv7N6DZS.jpg",
-        title: "WINTER SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        img: "https://wallpaperaccess.com/full/2316261.jpg",
+        title: "For Every Stage",
+        desc: "From your first guitar to your treasured road warrior, Epiphone crafts high-quality instruments musicians can rely on.",
         bg: "fcf1ed",
     },
     {
         id: 3,
-        img: "https://img.audiofanzine.com/images/u/product/normal/gibson-les-paul-classic-2465.jpg",
-        title: "POPULAR SALE",
-        desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+        img: "https://c0.wallpaperflare.com/preview/630/905/103/united-states-rancho-cucamonga-abundant-living-family-church-bass.jpg",
+        title: "Shape Your Sound",
+        desc: "Calling all sonic sculptors—your tools have arrived! Come meet the all-new lineup of Maestro effects.",
         bg: "fbf0f4",
     }
 ]
@@ -27,20 +27,20 @@ export const categories = [
         id: 1,
         img: "https://images.unsplash.com/photo-1580745294190-1626b58bf7ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWMlMjBndWl0YXJ8ZW58MHx8MHx8&w=1000&q=80",
         title: "Electric",
-        cat:"Electric"
+        cat:"electric"
     },
     {
         id: 2,
         img: "https://images.unsplash.com/photo-1580745089072-032cbde08507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWNvdXN0aWMlMjBndWl0YXJ8ZW58MHx8MHx8&w=1000&q=80",
         title: "Acoustic",
-        cat:"Acoustic"
+        cat:"acoustic"
 
     },
     {
         id: 3,
         img: "https://images.unsplash.com/photo-1622483819773-911f8fcf15ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmFzcyUyMGd1aXRhcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         title: "Bass",
-        cat:"Bass"
+        cat:"bass"
 
     },
 ]

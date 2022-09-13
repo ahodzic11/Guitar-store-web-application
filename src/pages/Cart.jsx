@@ -9,6 +9,7 @@ import StripeCheckout from "react-stripe-checkout"
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import {useNavigate} from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 const KEY = "pk_test_51LhHmgLaIhpnTH0CZyMTZL5JpPqS4Vdo7wVbMxn5HmvmaDpEPfvx9ta4lBRpuaDXPj8J3gCYVaDF2LQ9IqX35B1w00VXtc7z2y";
 
@@ -174,7 +175,7 @@ const Cart = () => {
           try {
             const res = await userRequest.post("/checkout/payment", {
               tokenId: stripeToken.id,
-              amount: 500,
+              amount: cart.total,
             });
             navigate("/success", {state: {
               stripeData: res.data,
@@ -188,14 +189,16 @@ const Cart = () => {
       <Navbar/>
       <Announcement/>
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <Title>YOUR CART</Title>
         <Top>
+            <Link to="/">
+
             <TopButton>CONTINUE SHOPPING</TopButton>
+            </Link>
             <TopTexts>
                 <TopText>Shopping Bag(2)</TopText>
                 <TopText>Your Wishlist(0)</TopText>
             </TopTexts>
-            <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
 
@@ -214,9 +217,7 @@ const Cart = () => {
                     </ProductDetail>
                     <PriceDetail>
                         <ProductAmountContainer>
-                            <Add/>
-                            <ProductAmount>{product.quantity}</ProductAmount>
-                            <Remove/>
+                            <ProductAmount>{product.quantity} item/s</ProductAmount>
                         </ProductAmountContainer>
                         <ProductPrice>${product.price*product.quantity}</ProductPrice>
                     </PriceDetail>
